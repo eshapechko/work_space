@@ -4,10 +4,12 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Work Space</title>
+        <link rel="preload" href="fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin />
 
-        <link href="style/normalize.css" rel="stylesheet" />
+        <link rel="stylesheet" href="index.css" />
 
-        <link rel="stylesheet" href="style/style.css" />
+        <script src="js/choices.min.js" defer></script>
+        <script src="js/script.js" defer></script>
     </head>
 
     <body>
@@ -31,6 +33,8 @@
 
             <div class="vacancies" id="vacancies">
                 <div class="container vacancies__container">
+                    <button class="vacancies__filter-btn">Фильтр</button>
+
                     <section class="vacancies__filter filter">
                         <h2 class="filter__title">Фильтр</h2>
 
@@ -64,11 +68,21 @@
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="format" value="Удаленный" />Удаленный
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="format"
+                                            value="Удаленный"
+                                        />Удаленный
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="format" value="Гибкий" />Гибкий
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="format"
+                                            value="Гибкий"
+                                        />Гибкий
                                     </label>
                                 </fieldset>
 
@@ -76,20 +90,39 @@
                                     <legend class="filter__legend">Опыт работы</legend>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="experience" value="Не важно" />Не важно
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="experience"
+                                            value="Не важно"
+                                        />Не важно
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="experience" value="Без опыта" />Без опыта
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="experience"
+                                            value="Без опыта"
+                                        />Без опыта
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="experience" value="От 1 года до 3-х лет" />От 1
-                                        года до 3-х лет
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="experience"
+                                            value="От 1 года до 3-х лет"
+                                        />От 1 года до 3-х лет
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="experience" value="От 3-х лет" />От 3-х лет
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="experience"
+                                            value="От 3-х лет"
+                                        />От 3-х лет
                                     </label>
                                 </fieldset>
 
@@ -97,20 +130,39 @@
                                     <legend class="filter__legend">Занятость</legend>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="type" value="Полная" />Полная
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="type"
+                                            value="Полная"
+                                        />Полная
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="type" value="Частичная" />Частичная
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="type"
+                                            value="Частичная"
+                                        />Частичная
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="type" value="Стажировка" />Стажировка
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="type"
+                                            value="Стажировка"
+                                        />Стажировка
                                     </label>
 
                                     <label class="filter__label checkbox">
-                                        <input class="checkbox__input" type="checkbox" name="type" value="Проектная работа" />Проектная
-                                        работа
+                                        <input
+                                            class="checkbox__input"
+                                            type="checkbox"
+                                            name="type"
+                                            value="Проектная работа"
+                                        />Проектная работа
                                     </label>
                                 </fieldset>
                             </div>
@@ -146,7 +198,11 @@
 
                             <li class="cards__item">
                                 <article class="vacancy" tabindex="1">
-                                    <img class="vacancy__img" src="./img/creative_people.svg" alt="Логотип компании Creative People" />
+                                    <img
+                                        class="vacancy__img"
+                                        src="./img/creative_people.svg"
+                                        alt="Логотип компании Creative People"
+                                    />
 
                                     <p class="vacancy__company">Creative People</p>
 
@@ -174,6 +230,179 @@
                                         <li class="vacancy__field">полная занятость</li>
                                         <li class="vacancy__field">офис</li>
                                         <li class="vacancy__field">опыт от 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="1">
+                                    <img
+                                        class="vacancy__img"
+                                        src="./img/creative_people.svg"
+                                        alt="Логотип компании Creative People"
+                                    />
+
+                                    <p class="vacancy__company">Creative People</p>
+
+                                    <h3 class="vacancy__title">Графический дизайнер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 110 000₽</li>
+                                        <li class="vacancy__field">проектная работа</li>
+                                        <li class="vacancy__field">удаленный</li>
+                                        <li class="vacancy__field">опыт от 1 года до 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="0">
+                                    <img class="vacancy__img" src="./img/yadro.svg" alt="Логотип компании YADRO" />
+
+                                    <p class="vacancy__company">YADRO</p>
+
+                                    <h3 class="vacancy__title">Инженер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 150 000₽</li>
+                                        <li class="vacancy__field">полная занятость</li>
+                                        <li class="vacancy__field">офис</li>
+                                        <li class="vacancy__field">опыт от 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="1">
+                                    <img
+                                        class="vacancy__img"
+                                        src="./img/creative_people.svg"
+                                        alt="Логотип компании Creative People"
+                                    />
+
+                                    <p class="vacancy__company">Creative People</p>
+
+                                    <h3 class="vacancy__title">Графический дизайнер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 110 000₽</li>
+                                        <li class="vacancy__field">проектная работа</li>
+                                        <li class="vacancy__field">удаленный</li>
+                                        <li class="vacancy__field">опыт от 1 года до 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="0">
+                                    <img class="vacancy__img" src="./img/yadro.svg" alt="Логотип компании YADRO" />
+
+                                    <p class="vacancy__company">YADRO</p>
+
+                                    <h3 class="vacancy__title">Инженер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 150 000₽</li>
+                                        <li class="vacancy__field">полная занятость</li>
+                                        <li class="vacancy__field">офис</li>
+                                        <li class="vacancy__field">опыт от 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="1">
+                                    <img
+                                        class="vacancy__img"
+                                        src="./img/creative_people.svg"
+                                        alt="Логотип компании Creative People"
+                                    />
+
+                                    <p class="vacancy__company">Creative People</p>
+
+                                    <h3 class="vacancy__title">Графический дизайнер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 110 000₽</li>
+                                        <li class="vacancy__field">проектная работа</li>
+                                        <li class="vacancy__field">удаленный</li>
+                                        <li class="vacancy__field">опыт от 1 года до 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="0">
+                                    <img class="vacancy__img" src="./img/yadro.svg" alt="Логотип компании YADRO" />
+
+                                    <p class="vacancy__company">YADRO</p>
+
+                                    <h3 class="vacancy__title">Инженер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 150 000₽</li>
+                                        <li class="vacancy__field">полная занятость</li>
+                                        <li class="vacancy__field">офис</li>
+                                        <li class="vacancy__field">опыт от 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="1">
+                                    <img
+                                        class="vacancy__img"
+                                        src="./img/creative_people.svg"
+                                        alt="Логотип компании Creative People"
+                                    />
+
+                                    <p class="vacancy__company">Creative People</p>
+
+                                    <h3 class="vacancy__title">Графический дизайнер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 110 000₽</li>
+                                        <li class="vacancy__field">проектная работа</li>
+                                        <li class="vacancy__field">удаленный</li>
+                                        <li class="vacancy__field">опыт от 1 года до 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="0">
+                                    <img class="vacancy__img" src="./img/yadro.svg" alt="Логотип компании YADRO" />
+
+                                    <p class="vacancy__company">YADRO</p>
+
+                                    <h3 class="vacancy__title">Инженер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 150 000₽</li>
+                                        <li class="vacancy__field">полная занятость</li>
+                                        <li class="vacancy__field">офис</li>
+                                        <li class="vacancy__field">опыт от 3-х лет</li>
+                                    </ul>
+                                </article>
+                            </li>
+
+                            <li class="cards__item">
+                                <article class="vacancy" tabindex="1">
+                                    <img
+                                        class="vacancy__img"
+                                        src="./img/creative_people.svg"
+                                        alt="Логотип компании Creative People"
+                                    />
+
+                                    <p class="vacancy__company">Creative People</p>
+
+                                    <h3 class="vacancy__title">Графический дизайнер</h3>
+
+                                    <ul class="vacancy__fields">
+                                        <li class="vacancy__field">от 110 000₽</li>
+                                        <li class="vacancy__field">проектная работа</li>
+                                        <li class="vacancy__field">удаленный</li>
+                                        <li class="vacancy__field">опыт от 1 года до 3-х лет</li>
                                     </ul>
                                 </article>
                             </li>
