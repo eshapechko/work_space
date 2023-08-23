@@ -8,6 +8,7 @@
 
 html {
     position: relative;
+    overflow-x: hidden;
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
@@ -19,6 +20,8 @@ html {
 }
 
 body {
+    position: relative;
+    overflow-x: hidden;
     min-width: 320px;
     min-height: 100vh;
     font-family: Inter, sans-serif;

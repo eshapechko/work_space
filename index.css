@@ -1,4 +1,4 @@
-@import "style/normilize.css";
+@import "style/normalize.css";
 @import "style/choices.min.css";
 @import "style/style.css";
 @import "style/header.css";
@@ -10,3 +10,5 @@
 @import "style/cards.css";
 @import "style/vacancy.css";
 @import "style/footer.css";
+@import "style/modal.css";
+@import "style/detail.css";
