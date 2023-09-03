@@ -14,6 +14,19 @@
     background-color: #a6adff;
     color: #171717;
     font-size: 20px;
+    border: 2px solid transparent;
+    transition-property: color, background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+}
+
+.header__link:focus-visible {
+    border-color: #4f58be;
+}
+
+.header__link:hover {
+    color: #fff;
+    background-color: #2a18ff;
 }
 
 @media (max-width: 1140px) {
@@ -28,7 +41,7 @@
     }
 
     .header__link {
-        padding: 10px 16px;
+        padding: 8px 23px;
         font-size: 14px;
     }
 }
