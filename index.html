@@ -4,6 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Work Space</title>
+        <link rel="icon" type="image/svg+xml" href="favicon.svg" />
         <link rel="preload" href="fonts/inter-regular.woff2" as="font" type="font/woff2" crossorigin />
 
         <link rel="stylesheet" href="index.css" />
@@ -33,22 +34,22 @@
 
             <div class="vacancies" id="vacancies">
                 <div class="container vacancies__container">
-                    <button class="vacancies__filter-btn">Фильтр</button>
+                    <button class="vacancies__filter-btn">
+                        <span>Фильтр</span>
+                        <svg
+                            class="vacancies__filter-btn-arrow"
+                            width="20"
+                            height="20"
+                            viewbox="0 0 20 20"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path d="M10 15L14 9H6L10 15Z" fill="currentColor" />
+                        </svg>
+                    </button>
 
                     <section class="vacancies__filter filter">
-                        <h2 class="filter__title">
-                            <span>Фильтр</span>
-                            <svg
-                                class="vacancies__filter-btn-arrow"
-                                width="20"
-                                height="20"
-                                viewbox="0 0 20 20"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path d="M10 15L14 9H6L10 15Z" fill="currentColor" />
-                            </svg>
-                        </h2>
+                        <h2 class="filter__title">Фильтр</h2>
 
                         <form class="filter__form">
                             <fieldset class="filter__fieldset">

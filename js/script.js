@@ -1,6 +1,7 @@
 const API_URL = "https://workspace-methed.vercel.app/";
 const LOCATION_URL = "api/locations";
 const VACANCY_URL = "api/vacancy";
+const BOT_TOKEN = "6690801346:AAGHgjb6E-tez6rZfVTX28_jW4qK02jagBo";
 
 const cardsList = document.querySelector(".cards__list");
 let lastUrl = "";
@@ -120,12 +121,46 @@ const createDetailVacancy = ({
                         </ul>
                     </div>
 
+                    ${
+                        isNaN(parseInt(id.slice(-1)))
+                            ? `
                     <p class="detail__resume">
-                        Отправляйте резюме на
-                        <a class="blue-text" href="mailto:${email}">${email}</a>
-                    </p>
+                    Отправляйте резюме на
+                    <a class="blue-text" href="mailto:${email}">${email}</a>
+                    </p>           
+                    `
+                            : `<form class="detail__tg">
+                                    <input class="detail__input" type="text" name="message" placeholder="Напишите свой email" >
+                                    <input name="vacancyId" type="hidden" value="${id}" >
+                                    <button class="detail__btn" >Отправить</button>
+                                </form>`
+                    }
+
+                   
                 </article>
 `;
+
+const sendTelegram = (modal) => {
+    modal.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const form = e.target.closest(".detail__tg");
+
+        const userId = "506157778";
+
+        const text = `Отклик на вакансию ${form.vacancyId.value}, email: ${form.message.value}`;
+        const urlBot = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${userId}&text=${text}`;
+
+        fetch(urlBot)
+            .then((res) => {
+                alert("Успешно отправлено");
+                form.reset();
+            })
+            .catch((err) => {
+                alert("Ошибка");
+                console.log(err);
+            });
+    });
+};
 
 const renderModal = (data) => {
     const modal = document.createElement("div");
@@ -155,6 +190,8 @@ const renderModal = (data) => {
             modal.remove();
         }
     });
+
+    sendTelegram(modal);
 };
 
 const openModal = (id) => {
@@ -216,6 +253,7 @@ const init = () => {
     // select city
     const citySelect = document.querySelector("#city");
     const cityChoices = new Choices(citySelect, {
+        searchEnabled: false,
         itemSelectText: "",
     });
 
@@ -231,6 +269,20 @@ const init = () => {
             console.log(err);
         }
     );
+
+    filterForm.addEventListener("reset", () => {
+        if (!cityChoices.config.searchEnabled) {
+            cityChoices.removeActiveItems();
+            cityChoices.setChoiceByValue("");
+            getData(urlWithParams, renderVacancies, renderError).then(() => {
+                lastUrl = urlWithParams;
+            });
+        } else {
+            placeholderItem = cityChoices._getTemplate("placeholder", "Выберите город");
+            cityChoices.itemList.append(placeholderItem);
+            cityChoices.setChoices(locations, "value", "label", false);
+        }
+    });
 
     //cards
 

@@ -40,10 +40,10 @@
         display: flex;
         align-items: center;
         margin-bottom: 24px;
-        transition-property: margin-bottom, color 0.2s ease-in-out;
+        transition-property: margin-bottom, color;
         transition-duration: 0.2s, 0.3s;
         transition-timing-function: ease-in-out;
-        transition-delay: 0.2s, 0;
+        transition-delay: 0.2s, 0s;
         color: #2a18ff;
         line-height: 20px;
     }
